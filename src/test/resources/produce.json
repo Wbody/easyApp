@@ -3,7 +3,7 @@
     "mysql": {
       "driverClassName":"com.mysql.jdbc.Driver",
       "url":"jdbc:mysql://127.0.0.1:3306/wbody_easyapp",
-      "username":"root",
+      "username":"wangboyun",
       "password":"123123",
       "initialSize":3,
       "minIdle":3,
