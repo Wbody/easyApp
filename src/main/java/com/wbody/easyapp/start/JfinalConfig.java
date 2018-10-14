@@ -2,17 +2,19 @@ package com.wbody.easyapp.start;
 
 import com.jfinal.config.*;
 import com.jfinal.template.Engine;
+import com.wbody.jfinal.ext.LogBackFactory;
 import com.wbody.jfinal.kit.ExplorerKit;
 
 public class JfinalConfig extends JFinalConfig {
     @Override
     public void configConstant(Constants constants) {
+        constants.setLogFactory(new LogBackFactory());
 
     }
 
     @Override
     public void configRoute(Routes routes) {
-
+       routes.add("/",IndexController.class);
     }
 
     @Override
