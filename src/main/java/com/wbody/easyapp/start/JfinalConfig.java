@@ -46,6 +46,9 @@ public class JfinalConfig extends JFinalConfig {
         Config mysql = config.getConfig("mysql");
         DruidPlugin dp = new DruidPlugin(mysql.getString("url"), mysql.getString("username"), mysql.getString("password"), mysql.getString("driverClassName"));
         dp.set(mysql.getInt("initialSize"), mysql.getInt("minIdle"), mysql.getInt("maxActive"));
+        dp.setRemoveAbandoned(true);
+        dp.setRemoveAbandonedTimeoutMillis(18000);
+        dp.setLogAbandoned(true);
         StatFilter statFilter = new StatFilter();
         statFilter.setMergeSql(true);
         statFilter.setLogSlowSql(true);
